@@ -1,0 +1,2 @@
+class Oreder < ApplicationRecord
+end
