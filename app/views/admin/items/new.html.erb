@@ -1,0 +1,40 @@
+<div class="row">
+ <h4><div class="admin-title p-3">商品新規登録</div></h4>
+</div>
+
+<div class="row d-flex justify-content-center">
+ <%= form_with model: @item, method: :post, url: admin_items_path, local:true do |f| %>
+ <table class="new-form-table">
+  <tbody>
+   <tr>
+    <td><%= f.label :商品画像 %></td>
+    <td><%= f.file_field :image, accept: "image/*" %></td>
+   </tr>
+   <tr>
+    <td><%= f.label :商品名 %></td>
+    <td><%= f.text_field :name, placeholder: "商品名" %></td>
+   </tr>
+   <tr>
+    <td><%= f.label :商品説明 %></td>
+    <td><%= f.text_area :introduction, placeholder: "ここに説明文を記述します" %></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td>
+    </td>
+   </tr>
+   </tbody>
+  </table>
+  <div class="row d-flex justify-content-center">
+  <%= f.submit :"新規登録", class: "btn btn-success w-120px" %>
+  </div>
+ <% end %>
+</div>

@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
+  get '/about' => 'public/homes#about'
+
   namespace :public do
     get 'oreders/index'
     get 'oreders/show'
   end
   namespace :public do
     get 'homes/top'
-    get 'homes/about'
     get 'customers/show'
     get 'customers/edit'
 
