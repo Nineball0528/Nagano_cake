@@ -1,2 +1,38 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
+<div class="row d-flex justify-content-center">
+  <div class="main-visual px-x">
+
+    <p class="text-dark">ようこそ、ながのCAKEへ！<br>
+      このサイトは、ケーキ販売のECサイトになります。<br>
+      会員でない方も商品の閲覧はできますが、<br>
+      購入には会員登録が必要になります。</p>
+
+ </div>
+</div>
+<div class="container my-3">
+  <div class="row">
+ <h4><strong>新着商品</strong></h4>
+  </div>
+<div class="mx-auto">
+  <% @items.last(4).each do |item| %>
+   <div class="d-flex justify-content-start ml-5">
+     <div class="d-flex flex-column mb-2">
+      <div class="">
+      <%= link_to item_path(item.id) do %>
+       <% if item.image.attached? %>
+          <%= image_tag item.image, size: "200x200" %>
+          <% else %>
+          <%= image_tag 'no_image', size: "200x200" %>
+          <% end %>
+      <% end %>
+      </div>
+      <div class="">
+       <%= item.name %>
+      </div>
+      <div class="">
+       ¥<%= (item.price * 1.1).floor %>
+      </div>
+     </div>
+  <% end %>
+   </div>
+ </div>
+</div>

@@ -1,2 +1,0 @@
-class OrederDetail < ApplicationRecord
-end

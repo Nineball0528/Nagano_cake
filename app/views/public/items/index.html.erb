@@ -1,0 +1,21 @@
+<div class="row p-3">
+  <h3><strong>商品一覧(全<%= Item.all.count %>件)</strong></h3>
+</div>
+
+<div class="row mb-5">
+  <% @items.each do |item| %>
+ <div class="d-flex flex-column ml-5">
+      <div class="mt-2">
+       <%= link_to item_path(item.id) do %>
+        <%= image_tag item.image, size: "200x200" %>
+       <% end %>
+      </div>
+      <div class="mb-1"><%= item.name %></div>
+      <div class="mb-1">¥<%= (item.price * 1.1).floor %></div>
+ </div>
+  <% end %>
+</div>
+
+<div class="row d-flex justify-content-center">
+  <%= paginate @items %>
+</div>

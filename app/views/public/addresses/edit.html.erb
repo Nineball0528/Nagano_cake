@@ -1,2 +1,28 @@
-<h1>Public::Addresses#edit</h1>
-<p>Find me in app/views/public/addresses/edit.html.erb</p>
+
+
+<div class="row">
+ <h4><div class="p-3">配送先編集</div></h4>
+</div>
+
+<div class="row">
+ <div class="col-11">
+  <table class="table table-borderless">
+   <%= form_with model: @address, method: :patch, url: address_path, local:true do |f| %>
+   <tbody>
+    <tr>
+     <td class="col-3">郵便番号（ハイフンなし）</td>
+     <td><%= f.text_field :postal_code %></td>
+    </tr>
+    <tr>
+     <td class="col-3">住所</td>
+     <td><%= f.text_field :address, class:"col-6" %></td>
+    </tr>
+    <tr>
+     <td class="col-3">宛名</td>
+     <td><%= f.text_field :name %><%= f.submit "変更内容を保存", class:"btn btn-success w-160px ml-180" %></td>
+    </tr>
+   </tbody>
+   <% end %>
+  </table>
+ </div>
+</div>
